@@ -18,20 +18,19 @@ public class DownloadService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.e("service", "ok");
 
         Thread downThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                HttpDownloader httpDownloader = new HttpDownloader();
-                int result = httpDownloader.download("http://overhuststreetview.qiniudn.com/street.zip", "", "street.zip");
+                DownloadHustStreet downloadHustStreet = new DownloadHustStreet("http://overhuststreetview.qiniudn.com/street.zip", "street.zip");
+                int result = downloadHustStreet.download();
                 if (result == 0) {
                     try {
                         UnZip unZip = new UnZip(SDPATH + "street.zip", SDPATH);
                         Log.e("upzip", "ok");
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
-                        Log.e("unzip",""+e);
+                        Log.e("unzip", "" + e);
                     }
                 }
                 Log.e("result", "" + result);
@@ -43,6 +42,26 @@ public class DownloadService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.e("service", "ok");
+
+        Thread downThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                DownloadHustStreet downloadHustStreet = new DownloadHustStreet("http://overhuststreetview.qiniudn.com/street.zip", "street.zip");
+                int result = downloadHustStreet.download();
+                if (result == 0) {
+                    try {
+                        UnZip unZip = new UnZip(SDPATH + "street.zip", SDPATH);
+                        Log.e("upzip", "ok");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Log.e("unzip", "" + e);
+                    }
+                }
+                Log.e("result", "" + result);
+            }
+        });
+        downThread.start();
+
         return super.onStartCommand(intent, flags, startId);
     }
 

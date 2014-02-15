@@ -22,44 +22,46 @@ import java.util.zip.ZipInputStream;
  * Created by fhw on 2/11/14.
  */
 public class UnZip {
+    private final int BUFFER = 1024;
 
-    public UnZip(String zipFile, String folderPath) throws ZipException, IOException {
-        ZipFile zfile = new ZipFile(zipFile);
+    public UnZip(String fileName, String toPath) throws ZipException, IOException {
+
+        File file=new File(Environment.getExternalStorageDirectory()+"/street");
+        if(file.exists()){
+            file.delete();
+        }
+
+        ZipFile zfile = new ZipFile(fileName);
         Enumeration zList = zfile.entries();
         ZipEntry ze = null;
-        byte[] buf = new byte[1024];
+        byte[] buf = new byte[BUFFER];
         while (zList.hasMoreElements()) {
             ze = (ZipEntry) zList.nextElement();
             if (ze.isDirectory()) {
-                Log.d("upZipFile", "ze.getName() = " + ze.getName());
-                String dirstr = folderPath + ze.getName();
-                //dirstr.trim();
+                String dirstr = toPath + ze.getName();
                 dirstr = new String(dirstr.getBytes("8859_1"), "GB2312");
-                Log.d("upZipFile", "str = " + dirstr);
                 File f = new File(dirstr);
                 f.mkdir();
                 continue;
             }
-            Log.d("upZipFile", "ze.getName() = " + ze.getName());
-            OutputStream os = new BufferedOutputStream(new FileOutputStream(getRealFileName(folderPath, ze.getName())));
+            OutputStream os = new BufferedOutputStream(new FileOutputStream(getRealFileName(toPath, ze.getName())));
             InputStream is = new BufferedInputStream(zfile.getInputStream(ze));
-            int readLen = 0;
-            while ((readLen = is.read(buf, 0, 1024)) != -1) {
-                os.write(buf, 0, readLen);
+            int count = 0;
+            while ((count = is.read(buf, 0, BUFFER)) != -1) {
+                os.write(buf, 0, count);
             }
             is.close();
             os.close();
         }
         zfile.close();
-        Log.d("upZipFile", "finishssssssssssssssssssss");
     }
 
     /**
-     * 给定根目录，返回一个相对路径所对应的实际文件名.
-     *
-     * @param baseDir     指定根目录
-     * @param absFileName 相对路径名，来自于ZipEntry中的name
-     * @return java.io.File 实际的文件
+     * 40     * 给定根目录，返回一个相对路径所对应的实际文件名.
+     * 41     * @param baseDir 指定根目录
+     * 42     * @param absFileName 相对路径名，来自于ZipEntry中的name
+     * 43     * @return java.io.File 实际的文件
+     * 44
      */
     public static File getRealFileName(String baseDir, String absFileName) {
         String[] dirs = absFileName.split("/");
@@ -98,41 +100,4 @@ public class UnZip {
         }
         return ret;
     }
-
-//    public UnZip(String unZipfileName, String mDestPath){
-//        if (!mDestPath.endsWith("/")) {
-//            mDestPath = mDestPath + "/";
-//        }
-//        FileOutputStream fileOut = null;
-//        ZipInputStream zipIn = null;
-//        ZipEntry zipEntry = null;
-//        File file = null;
-//
-//        int readedBytes = 0;
-//        byte buf[] = new byte[4096];
-//        try {
-//            zipIn = new ZipInputStream(new BufferedInputStream(new FileInputStream(unZipfileName)));
-//            while ((zipEntry = zipIn.getNextEntry()) != null) {
-//                file = new File(mDestPath + zipEntry.getName());
-//                if (zipEntry.isDirectory()) {
-//                    file.mkdirs();
-//                } else {
-//                    // 如果指定文件的目录不存在,则创建之.
-//                    File parent = file.getParentFile();
-//                    if (!parent.exists()) {
-//                        parent.mkdirs();
-//                    }
-//                    fileOut = new FileOutputStream(file);
-//                    while ((readedBytes = zipIn.read(buf)) > 0) {
-//                        fileOut.write(buf, 0, readedBytes);
-//                    }
-//                    fileOut.close();
-//                }
-//                zipIn.closeEntry();
-//            }
-//        } catch (IOException ioe) {
-//            ioe.printStackTrace();
-//        }
-//    }
-
 }
