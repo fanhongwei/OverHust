@@ -22,6 +22,7 @@ import com.unique.overhust.DownloadStreetView.DownloadService;
 import com.unique.overhust.Feedback.SendFeedback;
 import com.unique.overhust.R;
 import com.unique.overhust.UI.FeedbackDialog;
+import com.unique.overhust.UI.WipeCacheDialog;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -103,7 +104,8 @@ public class SettingActivity extends SwipeBackActivity {
         wipecache.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                WipeCacheDialog wipeCacheDialog=new WipeCacheDialog(SettingActivity.this,R.style.WipecacheDialog);
+                wipeCacheDialog.show();
             }
         });
         downloadstreetview.setOnClickListener(new View.OnClickListener() {

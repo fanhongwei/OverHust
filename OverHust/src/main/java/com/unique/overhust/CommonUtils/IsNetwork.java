@@ -1,21 +1,13 @@
 package com.unique.overhust.CommonUtils;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.Fragment;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.widget.Toast;
 
-import com.unique.overhust.MainActivity.MainActivity;
 import com.unique.overhust.R;
 import com.unique.overhust.UI.NetworkErrorDialog;
-import com.unique.overhust.fragment.MapFragment;
-
-import static android.app.PendingIntent.getActivity;
 
 /**
  * Created by fhw on 12/21/13.

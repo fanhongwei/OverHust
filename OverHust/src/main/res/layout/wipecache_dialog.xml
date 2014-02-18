@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/wipecachedheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_wipecache_header" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wipecache_ok"
+        android:layout_below="@id/wipecachedheader"
+        android:background="@drawable/wipecache_ok_selector"/>
+
+    <ImageView
+        android:id="@+id/wipecache_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wipecachedheader"
+        android:layout_toRightOf="@id/wipecache_ok"
+        android:background="@drawable/wipecache_cancel_selector" />
+
+</RelativeLayout>

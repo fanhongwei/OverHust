@@ -76,10 +76,10 @@
     <orderEntry type="library" exported="" name="SosoMapsdk_raster_v1.0.3" level="project" />
     <orderEntry type="library" exported="" name="aphid-flipview-library" level="project" />
     <orderEntry type="library" exported="" name="additionnal" level="project" />
-    <orderEntry type="module" module-name="AppMsgLibrary" exported="" />
-    <orderEntry type="module" module-name="SwipeBackLibrary" exported="" />
     <orderEntry type="library" exported="" name="umeng_sdk" level="project" />
     <orderEntry type="library" exported="" name="activation" level="project" />
+    <orderEntry type="module" module-name="SwipeBackLibrary" exported="" />
+    <orderEntry type="module" module-name="AppMsgLibrary" exported="" />
   </component>
 </module>
 
