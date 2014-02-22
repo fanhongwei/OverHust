@@ -12,13 +12,13 @@ public class SearchRecord {
         dbManager = new DBManager(context);
     }
 
-    public void add() {
-        dbManager.add();
+    public void add(String whichPlace,String date) {
+        dbManager.add(whichPlace,date);
         dbManager.closeDB();
     }
 
-    public void query() {
-        dbManager.query();
+    public void query(String whichRecord) {
+        dbManager.query(whichRecord);
         dbManager.closeDB();
     }
 

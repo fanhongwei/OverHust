@@ -47,9 +47,12 @@ import com.unique.overhust.NavigationUtils.NavigationTools;
 import com.unique.overhust.NavigationUtils.StreetNavigationOverlay;
 import com.unique.overhust.MapUtils.StreetPoiData;
 import com.unique.overhust.R;
+import com.unique.overhust.Record.NavigationRecord;
 import com.unique.overhust.UI.LoadStreetDialog;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class NavigationFragment extends Fragment implements TextWatcher {
@@ -147,6 +150,14 @@ public class NavigationFragment extends Fragment implements TextWatcher {
         });
         mImageView.setOnClickListener(new OnClickListener() {
 
+            //获取当前系统时间
+            public String dateCurrent(){
+                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd/hh");
+                Date currentdata=new Date(System.currentTimeMillis());
+                String date=simpleDateFormat.format(currentdata);
+                return date;
+            }
+
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
@@ -175,7 +186,7 @@ public class NavigationFragment extends Fragment implements TextWatcher {
                         public void run() {
                             // TODO Auto-generated method stub
                             //Toast.makeText(mContext, "请输入目的地", Toast.LENGTH_SHORT).show();
-                            AppMsg appMsg = AppMsg.makeText(mMainActivity, "请输入目的地", new AppMsg.Style(AppMsg.LENGTH_SHORT, R.color.alert),R.layout.appmsg_red);
+                            AppMsg appMsg = AppMsg.makeText(mMainActivity, "请输入目的地", new AppMsg.Style(AppMsg.LENGTH_SHORT, R.color.alert), R.layout.appmsg_red);
                             appMsg.setLayoutGravity(Gravity.TOP);
                             appMsg.show();
                             return;
@@ -186,8 +197,11 @@ public class NavigationFragment extends Fragment implements TextWatcher {
                     initStreatView(startPoint, endPoint);
                 }
 
-            }
+                //添加导航记录
+                NavigationRecord navigationRecord = new NavigationRecord(mContext);
+                navigationRecord.add(startEditText.getText().toString(),endEditText.getText().toString(),this.dateCurrent());
 
+            }
         });
         startEditText.addTextChangedListener(this);
         endEditText.addTextChangedListener(this);
@@ -412,7 +426,7 @@ public class NavigationFragment extends Fragment implements TextWatcher {
 
     //加载progressDialog
     public LoadStreetDialog showDialog() {
-        mDialog=new LoadStreetDialog(mContext,R.style.LoadStreetDialog);
+        mDialog = new LoadStreetDialog(mContext, R.style.LoadStreetDialog);
         mDialog.show();
 
         startEditText.setVisibility(View.INVISIBLE);

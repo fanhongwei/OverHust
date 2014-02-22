@@ -20,8 +20,15 @@ public class DownloadHustStreet {
     private URLConnection connection;
     private InputStream inputStream;
     private OutputStream outputStream;
+    private int filesize;
+    private DownloadNotification downloadNotification;
+    private int downloadSize, count;
 
     public DownloadHustStreet(String streetUrl, String filename) {
+
+        downloadNotification = new DownloadNotification();
+        downloadNotification.showNotification();
+
         urlDownload = streetUrl;
         fileName = Environment.getExternalStorageDirectory() + "/" + filename;
         file = new File(fileName);
@@ -46,6 +53,7 @@ public class DownloadHustStreet {
         try {
             url = new URL(urlDownload);
             connection = url.openConnection();
+            filesize = connection.getContentLength();
             inputStream = connection.getInputStream();
         } catch (Exception e) {
             e.printStackTrace();
@@ -53,11 +61,17 @@ public class DownloadHustStreet {
         }
 
         try {
-            byte[] bytes = new byte[1024];
+            byte[] bytes = new byte[4096];
             outputStream = new FileOutputStream(fileName);
-            int count=0;
-            while ((count=inputStream.read(bytes))!=-1) {
-                outputStream.write(bytes,0,count);
+            int i = 0;
+            while ((count = inputStream.read(bytes)) > 0) {
+                downloadSize += count;
+                outputStream.write(bytes, 0, count);
+                if (i >= 10000) {
+                    downloadNotification.updateProgressbar(downloadSize, filesize, count);
+                    i = 0;
+                }
+                i += count;
             }
             inputStream.close();
             outputStream.close();
@@ -73,4 +87,5 @@ public class DownloadHustStreet {
             return 1;
         }
     }
+
 }

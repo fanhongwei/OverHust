@@ -20,6 +20,7 @@ import android.widget.ImageView;
 
 import com.devspark.appmsg.AppMsg;
 import com.unique.overhust.R;
+import com.unique.overhust.Record.SearchRecord;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
@@ -72,7 +73,9 @@ public class MeActivity extends SwipeBackActivity {
         navRecView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAppMsg();
+                //showAppMsg();
+                SearchRecord searchRecord=new SearchRecord(MeActivity.this);
+                searchRecord.query("search");
             }
         });
         seaRecView.setOnClickListener(new View.OnClickListener() {

@@ -14,12 +14,13 @@ import java.io.IOException;
  */
 public class DownloadService extends Service {
     private String SDPATH = Environment.getExternalStorageDirectory() + "/";
+    private Thread downloadThread;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        Thread downThread = new Thread(new Runnable() {
+        downloadThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 DownloadHustStreet downloadHustStreet = new DownloadHustStreet("http://overhuststreetview.qiniudn.com/street.zip", "street.zip");
@@ -27,16 +28,19 @@ public class DownloadService extends Service {
                 if (result == 0) {
                     try {
                         UnZip unZip = new UnZip(SDPATH + "street.zip", SDPATH);
-                        Log.e("upzip", "ok");
+
+                        //中止service
+                        Intent intent = new Intent();
+                        intent.setAction("com.unique.overhust.DownloadService");
+                        stopService(intent);
+
                     } catch (Exception e) {
                         e.printStackTrace();
-                        Log.e("unzip", "" + e);
                     }
                 }
-                Log.e("result", "" + result);
             }
         });
-        downThread.start();
+        downloadThread.start();
     }
 
     @Override
@@ -51,13 +55,16 @@ public class DownloadService extends Service {
                 if (result == 0) {
                     try {
                         UnZip unZip = new UnZip(SDPATH + "street.zip", SDPATH);
-                        Log.e("upzip", "ok");
+
+                        //中止service
+                        Intent intent = new Intent();
+                        intent.setAction("com.unique.overhust.DownloadService");
+                        stopService(intent);
+
                     } catch (Exception e) {
                         e.printStackTrace();
-                        Log.e("unzip", "" + e);
                     }
                 }
-                Log.e("result", "" + result);
             }
         });
         downThread.start();

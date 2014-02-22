@@ -13,13 +13,13 @@ public class NavigationRecord {
         dbManager = new DBManager(context);
     }
 
-    public void add() {
-        dbManager.add();
+    public void add(String fromPlace,String toPlace,String date) {
+        dbManager.add(fromPlace,toPlace,date);
         dbManager.closeDB();
     }
 
-    public void query() {
-        dbManager.query();
+    public void query(String whichRecord) {
+        dbManager.query(whichRecord);
         dbManager.closeDB();
     }
 
@@ -27,5 +27,4 @@ public class NavigationRecord {
         dbManager.delete();
         dbManager.closeDB();
     }
-
 }

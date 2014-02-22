@@ -30,11 +30,14 @@ import com.unique.overhust.CommonUtils.IsNetwork;
 import com.unique.overhust.MainActivity.MainActivity;
 import com.unique.overhust.CommonUtils.SearchCheeses;
 import com.unique.overhust.R;
+import com.unique.overhust.Record.SearchRecord;
 
 import org.xmlpull.v1.XmlPullParser;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -89,6 +92,15 @@ public class SearchFragment extends Fragment implements TextWatcher {
         mListView.setOnItemClickListener(new ListViewListener());
 
         mImageView.setOnClickListener(new View.OnClickListener() {
+
+            //获取当前系统时间
+            public String dateCurrent(){
+                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd/hh");
+                Date currentdata=new Date(System.currentTimeMillis());
+                String date=simpleDateFormat.format(currentdata);
+                return date;
+            }
+
             @Override
             public void onClick(View v) {
                 if (mEditText.getText().toString().equals("")) {
@@ -124,6 +136,10 @@ public class SearchFragment extends Fragment implements TextWatcher {
                     FragmentTransaction searchTransaction = fragmentManager.beginTransaction();
                     searchTransaction.replace(R.id.content_frame, mPhotoWallFragment);
                     searchTransaction.commit();
+
+                    //添加搜索记录
+                    SearchRecord searchRecord=new SearchRecord(mContext);
+                    searchRecord.add(mEditText.getText().toString(),this.dateCurrent());
                 }
             }
         });
@@ -186,6 +202,7 @@ public class SearchFragment extends Fragment implements TextWatcher {
             dismissList();
         }
     }
+
 
     class ListViewListener implements AdapterView.OnItemClickListener {
         @Override

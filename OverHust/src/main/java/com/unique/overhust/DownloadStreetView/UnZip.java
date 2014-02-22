@@ -26,16 +26,19 @@ public class UnZip {
 
     public UnZip(String fileName, String toPath) throws ZipException, IOException {
 
-        File file=new File(Environment.getExternalStorageDirectory()+"/street");
-        if(file.exists()){
-            file.delete();
+        File file = new File(Environment.getExternalStorageDirectory() + "/street");
+        if (file.exists()) {
+            clear(file);
         }
+
 
         ZipFile zfile = new ZipFile(fileName);
         Enumeration zList = zfile.entries();
         ZipEntry ze = null;
         byte[] buf = new byte[BUFFER];
-        while (zList.hasMoreElements()) {
+        while (zList.hasMoreElements())
+
+        {
             ze = (ZipEntry) zList.nextElement();
             if (ze.isDirectory()) {
                 String dirstr = toPath + ze.getName();
@@ -53,6 +56,7 @@ public class UnZip {
             is.close();
             os.close();
         }
+
         zfile.close();
     }
 
@@ -99,5 +103,19 @@ public class UnZip {
             return ret;
         }
         return ret;
+    }
+
+    public void clear(File file) {
+        if (file.exists()) {
+            if (file.isFile()) {
+                file.delete();
+            } else if (file.isDirectory()) {
+                File[] files = file.listFiles();
+                for (File f : files) {
+                    clear(f);
+                }
+            }
+            file.delete();
+        }
     }
 }

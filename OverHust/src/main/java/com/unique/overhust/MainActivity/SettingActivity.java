@@ -2,10 +2,12 @@ package com.unique.overhust.MainActivity;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -74,8 +76,8 @@ public class SettingActivity extends SwipeBackActivity {
         feedbackView = (ImageView) findViewById(R.id.feedback);
         aboutUsView = (ImageView) findViewById(R.id.aboutus);
         aboutOverHust = (ImageView) findViewById(R.id.about_overhust);
-        wipecache=(ImageView)findViewById(R.id.wipecache);
-        downloadstreetview=(ImageView)findViewById(R.id.downloadstreetview);
+        wipecache = (ImageView) findViewById(R.id.wipecache);
+        downloadstreetview = (ImageView) findViewById(R.id.downloadstreetview);
     }
 
     public void viewOnClick() {
@@ -104,15 +106,21 @@ public class SettingActivity extends SwipeBackActivity {
         wipecache.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                WipeCacheDialog wipeCacheDialog=new WipeCacheDialog(SettingActivity.this,R.style.WipecacheDialog);
+                WipeCacheDialog wipeCacheDialog = new WipeCacheDialog(SettingActivity.this, R.style.WipecacheDialog);
                 wipeCacheDialog.show();
             }
         });
         downloadstreetview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startDownload=new Intent(SettingActivity.this, DownloadService.class);
+                Intent startDownload = new Intent(SettingActivity.this, DownloadService.class);
                 startService(startDownload);
+
+                AppMsg appMsg = AppMsg.makeText(SettingActivity.this, "已开始下载离线包", new AppMsg.Style(AppMsg.LENGTH_SHORT, R.color.overhust), R.layout.appmsg_green);
+                appMsg.setLayoutGravity(Gravity.TOP);
+                appMsg.show();
+
+
             }
         });
     }
