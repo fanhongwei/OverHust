@@ -3,6 +3,8 @@ package com.unique.overhust.Record;
 
 import android.content.Context;
 
+import com.unique.overhust.CommonUtils.Database.DBManager;
+
 /**
  * Created by fhw on 2/18/14.
  */

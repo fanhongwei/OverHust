@@ -29,7 +29,7 @@ public class DownloadNotification {
     private RemoteViews remoteViews;
 
     public DownloadNotification() {
-        Log.e("notification", "ok");
+
     }
 
     public void initNotification() {

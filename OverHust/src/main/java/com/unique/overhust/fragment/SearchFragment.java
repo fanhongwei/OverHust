@@ -132,9 +132,9 @@ public class SearchFragment extends Fragment implements TextWatcher {
                     }
                     mRelativeLayout.setVisibility(View.INVISIBLE);
                     FragmentManager fragmentManager = getFragmentManager();
-                    PhotoWallFragment mPhotoWallFragment = new PhotoWallFragment();
+                    SearchResultsFragment mSearchResultsFragment=new SearchResultsFragment();
                     FragmentTransaction searchTransaction = fragmentManager.beginTransaction();
-                    searchTransaction.replace(R.id.content_frame, mPhotoWallFragment);
+                    searchTransaction.replace(R.id.content_frame, mSearchResultsFragment);
                     searchTransaction.commit();
 
                     //添加搜索记录

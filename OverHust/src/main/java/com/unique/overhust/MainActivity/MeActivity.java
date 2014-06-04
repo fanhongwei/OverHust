@@ -33,7 +33,7 @@ public class MeActivity extends SwipeBackActivity {
     private ImageView meBackView;
     private SwipeBackLayout mSwipeBackLayout;
 
-    private ImageView navRecView,seaRecView,loveRecView;
+    private ImageView navRecView, seaRecView, loveRecView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +58,12 @@ public class MeActivity extends SwipeBackActivity {
 
     public void findViews() {
         meBackView = (ImageView) findViewById(R.id.meback);
-        navRecView=(ImageView)findViewById(R.id.navitationRecord);
-        seaRecView=(ImageView)findViewById(R.id.searchRecord);
-        loveRecView=(ImageView)findViewById(R.id.loveRecord);
+        navRecView = (ImageView) findViewById(R.id.navitationRecord);
+        seaRecView = (ImageView) findViewById(R.id.searchRecord);
+        loveRecView = (ImageView) findViewById(R.id.loveRecord);
     }
 
-    public void setOnClick(){
+    public void setOnClick() {
         meBackView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,9 +73,9 @@ public class MeActivity extends SwipeBackActivity {
         navRecView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //showAppMsg();
-                SearchRecord searchRecord=new SearchRecord(MeActivity.this);
-                searchRecord.query("search");
+                showAppMsg();
+//                SearchRecord searchRecord=new SearchRecord(MeActivity.this);
+//                searchRecord.query("search");
             }
         });
         seaRecView.setOnClickListener(new View.OnClickListener() {
@@ -92,11 +92,12 @@ public class MeActivity extends SwipeBackActivity {
         });
     }
 
-    public void showAppMsg(){
-        AppMsg appMsg = AppMsg.makeText(this, "敬请期待", new AppMsg.Style(AppMsg.LENGTH_SHORT, R.color.overhust),R.layout.appmsg_green);
+    public void showAppMsg() {
+        AppMsg appMsg = AppMsg.makeText(this, "敬请期待", new AppMsg.Style(AppMsg.LENGTH_SHORT, R.color.overhust), R.layout.appmsg_green);
         appMsg.setLayoutGravity(Gravity.TOP);
         appMsg.show();
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 

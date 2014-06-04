@@ -41,7 +41,7 @@ public class DrawerFragment extends Fragment {
         navigation.setOnClickListener(new MyOnClickListener());
         search.setOnClickListener(new MyOnClickListener());
         schoolbus.setOnClickListener(new MyOnClickListener());
-        me.setOnClickListener(new MyOnClickListener());
+        //me.setOnClickListener(new MyOnClickListener());
         setting.setOnClickListener(new MyOnClickListener());
     }
 
@@ -50,7 +50,7 @@ public class DrawerFragment extends Fragment {
         navigation = (ImageView) drawerView.findViewById(R.id.navigation);
         search = (ImageView) drawerView.findViewById(R.id.search);
         schoolbus = (ImageView) drawerView.findViewById(R.id.schoolbus);
-        me = (ImageView) drawerView.findViewById(R.id.me);
+        //me = (ImageView) drawerView.findViewById(R.id.me);
         setting = (ImageView) drawerView.findViewById(R.id.setting);
     }
 
@@ -105,12 +105,12 @@ public class DrawerFragment extends Fragment {
                     search.setImageResource(R.drawable.ic_search_press);
                     schoolbus.setImageResource(R.drawable.ic_schoolbus);
                     break;
-                case R.id.me:
-                    //mMainActivity.closeDrawer();
-                    Intent meIntent = new Intent(mMainActivity, MeActivity.class);
-                    startActivity(meIntent);
-                    //mMainActivity.finish();
-                    break;
+//                case R.id.me:
+//                    //mMainActivity.closeDrawer();
+//                    Intent meIntent = new Intent(mMainActivity, MeActivity.class);
+//                    startActivity(meIntent);
+//                    //mMainActivity.finish();
+//                    break;
                 case R.id.setting:
                     //mMainActivity.closeDrawer();
                     Intent settingIntent = new Intent(mMainActivity, SettingActivity.class);

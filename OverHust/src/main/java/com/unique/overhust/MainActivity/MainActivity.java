@@ -39,7 +39,7 @@ import java.util.TimerTask;
 
 
 public class MainActivity extends Activity {
-    private FoldingDrawerLayout mDrawerLayout;
+    private DrawerLayout mDrawerLayout;
     private FrameLayout drawerFrameLyout, contentFrameLyout;
     private DrawerFragment mDrawerFragment;
     private OverHustLocation mOverHustLocation;
@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
         initDrawer();
         initFirstInto();
         mDrawerLayout.openDrawer(GravityCompat.START);
+        mDrawerLayout.setFocusableInTouchMode(false);
         mOverHustLocation = new OverHustLocation(this);
         mOverHustLocation.getLocation();
 
@@ -72,7 +73,7 @@ public class MainActivity extends Activity {
     }
 
     public void findViews() {
-        mDrawerLayout = (FoldingDrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerFrameLyout = (FrameLayout) findViewById(R.id.drawer_frame);
         contentFrameLyout = (FrameLayout) findViewById(R.id.content_frame);
         footImageView = (ImageView) findViewById(R.id.foot);
@@ -140,23 +141,27 @@ public class MainActivity extends Activity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            exit();      //连按两次退出应用
+            if(mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+                finish();
+                System.exit(0);
+            }
+            openDrawer();
         }
-        return false;
+        return true;
     }
 
-    public void exit() {
-        if ((System.currentTimeMillis() - exitTime) > 2000) {
-//            Toast.makeText(getApplicationContext(), "再按一次退出程序",
-//                    Toast.LENGTH_SHORT).show();
-            AppMsg appMsg = AppMsg.makeText(this, "再次按返回键退出应用", new AppMsg.Style(AppMsg.LENGTH_SHORT, R.color.overhust),R.layout.appmsg_green);
-            appMsg.setLayoutGravity(Gravity.BOTTOM);
-            appMsg.show();
-            exitTime = System.currentTimeMillis();
-        } else {
-            finish();
-            System.exit(0);
-        }
-    }
+//    public void exit() {
+//        if ((System.currentTimeMillis() - exitTime) > 2000) {
+////            Toast.makeText(getApplicationContext(), "再按一次退出程序",
+////                    Toast.LENGTH_SHORT).show();
+//            AppMsg appMsg = AppMsg.makeText(this, "再次按返回键退出应用", new AppMsg.Style(AppMsg.LENGTH_SHORT, R.color.overhust),R.layout.appmsg_green);
+//            appMsg.setLayoutGravity(Gravity.BOTTOM);
+//            appMsg.show();
+//            exitTime = System.currentTimeMillis();
+//        } else {
+//            finish();
+//            System.exit(0);
+//        }
+//    }
 
 }

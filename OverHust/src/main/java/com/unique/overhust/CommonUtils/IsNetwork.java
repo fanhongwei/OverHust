@@ -23,22 +23,22 @@ public class IsNetwork {
 
     public IsNetwork(Context context) {
         mContext = context;
+        mConnManager = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+        mNetworkInfo = mConnManager.getActiveNetworkInfo();
     }
 
     //未连网判断以及提示
     public void isNetwork() {
-        mConnManager = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-        mNetworkInfo = mConnManager.getActiveNetworkInfo();
         if (mNetworkInfo != null) {
             if (mNetworkInfo.isAvailable() == false) {
                 //showDialog();
-                NetworkErrorDialog mDialog=new NetworkErrorDialog(mContext, R.style.NetworkErrorDialog);
+                NetworkErrorDialog mDialog = new NetworkErrorDialog(mContext, R.style.NetworkErrorDialog);
                 mDialog.show();
                 isNetwork = false;
             }
         } else {
             //showDialog();
-            NetworkErrorDialog mDialog=new NetworkErrorDialog(mContext,R.style.NetworkErrorDialog);
+            NetworkErrorDialog mDialog = new NetworkErrorDialog(mContext, R.style.NetworkErrorDialog);
             mDialog.show();
             isNetwork = false;
         }
@@ -47,6 +47,12 @@ public class IsNetwork {
     //传递网络状况
     public boolean getNetworkState() {
         return isNetwork;
+    }
+
+    //获得网络类型
+    public int getNetworkType() {
+        int networkType = mNetworkInfo.getType();
+        return networkType;
     }
 
     private void showDialog() {

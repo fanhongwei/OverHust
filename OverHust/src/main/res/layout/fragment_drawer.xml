@@ -38,13 +38,14 @@
         android:layout_width="match_parent"
         android:layout_height="70dp" />
 
-    <ImageView
-        android:id="@+id/me"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:src="@drawable/me_selector" />
+    <!--<ImageView-->
+        <!--android:id="@+id/me"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="65dp"-->
+        <!--android:src="@drawable/me_selector" />-->
 
     <ImageView
+        android:layout_marginBottom="2dp"
         android:id="@+id/setting"
         android:layout_width="match_parent"
         android:layout_height="65dp"

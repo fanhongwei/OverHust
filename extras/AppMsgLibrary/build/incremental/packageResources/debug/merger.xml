@@ -2,9 +2,9 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/home/fhw/Documents/android-code/OverHust/extras/AppMsgLibrary/res" >
+        <source path="/home/dsnc/Documents/android-code/OverHust/extras/AppMsgLibrary/res" >
             <file
-                path="/home/fhw/Documents/android-code/OverHust/extras/AppMsgLibrary/res/values/colors.xml"
+                path="/home/dsnc/Documents/android-code/OverHust/extras/AppMsgLibrary/res/values/colors.xml"
                 qualifiers="" >
                 <color name="meself" >#FFFFFF
                 </color>
@@ -19,14 +19,15 @@
             </file>
             <file
                 name="app_msg"
-                path="/home/fhw/Documents/android-code/OverHust/extras/AppMsgLibrary/res/layout/app_msg.xml"
+                path="/home/dsnc/Documents/android-code/OverHust/extras/AppMsgLibrary/res/layout/app_msg.xml"
                 qualifiers=""
                 type="layout" />
         </source>
-        <source path="/home/fhw/Documents/android-code/OverHust/extras/AppMsgLibrary/build/res/rs/debug" />
+        <source path="/home/dsnc/Documents/android-code/OverHust/extras/AppMsgLibrary/build/res/rs/debug" />
+        <source path="/home/dsnc/Documents/android-code/OverHust/extras/AppMsgLibrary/build/res/generated/debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/home/fhw/Documents/android-code/OverHust/extras/AppMsgLibrary/src/debug/res" />
+        <source path="/home/dsnc/Documents/android-code/OverHust/extras/AppMsgLibrary/src/debug/res" />
     </dataSet>
 
 </merger>

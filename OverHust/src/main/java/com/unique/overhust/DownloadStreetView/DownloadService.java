@@ -19,28 +19,27 @@ public class DownloadService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-
-        downloadThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                DownloadHustStreet downloadHustStreet = new DownloadHustStreet("http://overhuststreetview.qiniudn.com/street.zip", "street.zip");
-                int result = downloadHustStreet.download();
-                if (result == 0) {
-                    try {
-                        UnZip unZip = new UnZip(SDPATH + "street.zip", SDPATH);
-
-                        //中止service
-                        Intent intent = new Intent();
-                        intent.setAction("com.unique.overhust.DownloadService");
-                        stopService(intent);
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
-        downloadThread.start();
+//        downloadThread = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                DownloadHustStreet downloadHustStreet = new DownloadHustStreet("http://overhuststreetview.qiniudn.com/street.zip", "street.zip");
+//                int result = downloadHustStreet.download();
+//                if (result == 0) {
+//                    try {
+//                        UnZip unZip = new UnZip(SDPATH + "street.zip", SDPATH);
+//
+//                        //中止service
+//                        Intent intent = new Intent();
+//                        intent.setAction("com.unique.overhust.DownloadService");
+//                        stopService(intent);
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        });
+//        downloadThread.start();
     }
 
     @Override
