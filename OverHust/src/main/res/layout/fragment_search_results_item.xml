@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:id="@+id/name"
+        android:background="@drawable/fragment_search_results_textview"
+        android:textColor="#ffffff"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="167dp"
+        android:id="@+id/picture"
+        android:layout_below="@id/name" />
+
+    <LinearLayout
+        android:layout_below="@id/picture"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:orientation="horizontal"
+        android:layout_alignLeft="@id/picture"
+        android:layout_alignRight="@id/picture">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:id="@+id/navigationto"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_search_results_navigationto_selector" />
+
+        <ImageView
+            android:layout_toRightOf="@id/navigationto"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:id="@+id/loadstreetview"
+            android:layout_weight="1"
+            android:background="@drawable/fragment_search_results_loadview_selector" />
+    </LinearLayout>
+</RelativeLayout>

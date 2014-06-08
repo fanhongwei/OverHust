@@ -15,6 +15,8 @@ import android.widget.ImageView;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.umeng.update.UmengUpdateAgent;
+import com.unique.overhust.CommonUtils.Database.DBManager;
+import com.unique.overhust.CommonUtils.Database.InitDatabase;
 import com.unique.overhust.Feedback.SendFeedback;
 import com.unique.overhust.FirstInto.GuideAdapter;
 import com.unique.overhust.MapUtils.OverHustLocation;
@@ -58,6 +60,14 @@ public class StartActivity extends Activity {
                 editor.commit();
             }
         } else {
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    InitDatabase.initDatabase();
+                }
+            }).start();
+
             flipView = new FlipViewController(this, FlipViewController.HORIZONTAL);
             flipView.setAdapter(new GuideAdapter(this));
             setContentView(flipView);

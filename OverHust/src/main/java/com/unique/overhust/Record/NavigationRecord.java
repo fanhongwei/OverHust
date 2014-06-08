@@ -16,17 +16,14 @@ public class NavigationRecord {
     }
 
     public void add(String fromPlace,String toPlace,String date) {
-        dbManager.add(fromPlace,toPlace,date);
-        dbManager.closeDB();
+
     }
 
     public void query(String whichRecord) {
-        dbManager.query(whichRecord);
-        dbManager.closeDB();
+
     }
 
     public void delete() {
-        dbManager.delete();
-        dbManager.closeDB();
+
     }
 }

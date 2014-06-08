@@ -1,8 +1,26 @@
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="40dp"
-    android:paddingBottom="57dp"
-    android:layout_centerHorizontal="true"
-    android:background="@drawable/pic"/>
+    android:background="@drawable/pic">
+
+    <ListView
+        android:id="@+id/fragment_search_results_listview"
+        android:layout_width="262dp"
+        android:layout_height="match_parent"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="37dp"
+        android:listSelector="@android:color/transparent"
+        android:scrollbarStyle="insideInset"
+        android:scrollbarSize="3dp"/>
+
+    <ImageView
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_back"
+        android:background="@drawable/fragment_search_results_selector" />
+</RelativeLayout>

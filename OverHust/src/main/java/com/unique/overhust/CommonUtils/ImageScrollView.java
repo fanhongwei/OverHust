@@ -30,7 +30,6 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.Toast;
 
 import com.devspark.appmsg.AppMsg;
 import com.unique.overhust.MainActivity.ImageDetailsActivity;
@@ -80,7 +79,7 @@ public class ImageScrollView extends ScrollView implements OnTouchListener {
     /**
      * 对图片进行管理的工具类
      */
-    private ImageLoader imageLoader;
+    private MyImageLoader imageLoader;
 
     /**
      * 第一列的布局
@@ -163,7 +162,7 @@ public class ImageScrollView extends ScrollView implements OnTouchListener {
     public ImageScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mMainActivity = (MainActivity) context;
-        imageLoader = ImageLoader.getInstance();
+        imageLoader = MyImageLoader.getInstance();
         taskCollection = new HashSet<LoadImageTask>();
         setOnTouchListener(this);
         if (SearchFragment.KEY == 1) {
@@ -353,7 +352,7 @@ public class ImageScrollView extends ScrollView implements OnTouchListener {
                 downloadImage(imageUrl);
             }
             if (imageUrl != null) {
-                Bitmap bitmap = ImageLoader.decodeSampledBitmapFromResource(
+                Bitmap bitmap = MyImageLoader.decodeSampledBitmapFromResource(
                         imageFile.getPath(), columnWidth);
                 if (bitmap != null) {
                     imageLoader.addBitmapToMemoryCache(imageUrl, bitmap);
@@ -488,7 +487,7 @@ public class ImageScrollView extends ScrollView implements OnTouchListener {
                 }
             }
             if (imageFile != null) {
-                Bitmap bitmap = ImageLoader.decodeSampledBitmapFromResource(
+                Bitmap bitmap = MyImageLoader.decodeSampledBitmapFromResource(
                         imageFile.getPath(), columnWidth);
                 if (bitmap != null) {
                     imageLoader.addBitmapToMemoryCache(imageUrl, bitmap);

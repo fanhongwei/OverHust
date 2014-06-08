@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.devspark.appmsg.AppMsg;
+import com.squareup.picasso.Picasso;
+import com.unique.overhust.CommonUtils.ShareContext;
 import com.unique.overhust.CommonUtils.ZoomImageView;
 import com.unique.overhust.R;
 
@@ -42,21 +45,25 @@ public class ImageDetailsActivity extends SwipeBackActivity {
         setContentView(R.layout.activity_image_details);
 
         zoomImageView = (ZoomImageView) findViewById(R.id.zoom_image_view);
-        // 取出图片路径，并解析成Bitmap对象，然后在ZoomImageView中显示
-        String imagePath = getIntent().getStringExtra("image_path");
-        bitmap = BitmapFactory.decodeFile(imagePath);
-        zoomImageView.setImageBitmap(bitmap);
 
         //左侧滑动返回
         mSwipeBackLayout = getSwipeBackLayout();
         mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
         mSwipeBackLayout.setEdgeSize(EDGE_SIZE);
 
-//        if (savedInstanceState == null) {
-//            getFragmentManager().beginTransaction()
-//                    .add(R.id.container, new PlaceholderFragment())
-//                    .commit();
-//        }
+        // 取出图片路径，并解析成Bitmap对象，然后在ZoomImageView中显示
+        final String imagePath = getIntent().getStringExtra("image_path");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    zoomImageView.setImageBitmap(Picasso.with(ShareContext.getInstance()).load(imagePath).get());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
     }
 
 

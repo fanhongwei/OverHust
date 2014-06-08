@@ -17,8 +17,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS NavigationRecord" + "(id INTEGER PRIMARY KEY AUTOINCREMENT,fromPlace VARCHAR,toPlace VARCHAR,date TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS SearchRecord" + "(id INTEGER PRIMARY KEY AUTOINCREMENT,place VARCHAR,date TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS NavigationRecord" + "(_id INTEGER PRIMARY KEY AUTOINCREMENT,fromPlace VARCHAR,toPlace VARCHAR,date TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS SearchRecord" + "(_id INTEGER PRIMARY KEY AUTOINCREMENT,place VARCHAR,date TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS 图片资源"+"(_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,longitude REAL,latitude REAL,category VARCHAR,picUrl TEXT)");
     }
 
     @Override

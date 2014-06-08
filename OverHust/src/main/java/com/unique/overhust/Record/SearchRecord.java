@@ -15,17 +15,14 @@ public class SearchRecord {
     }
 
     public void add(String whichPlace,String date) {
-        dbManager.add(whichPlace,date);
-        dbManager.closeDB();
+
     }
 
     public void query(String whichRecord) {
-        dbManager.query(whichRecord);
-        dbManager.closeDB();
+
     }
 
     public void delete() {
-        dbManager.delete();
-        dbManager.closeDB();
+
     }
 }

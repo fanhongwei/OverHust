@@ -109,27 +109,8 @@ public class SearchFragment extends Fragment implements TextWatcher {
                     appMsg.setLayoutGravity(Gravity.TOP);
                     appMsg.show();
                 } else {
-                    if (mEditText.getText().toString().contains("食堂")) {
-                        KEY = 1;
-                    } else if (mEditText.getText().toString().contains("华科美景")) {
-                        KEY = 2;
-                    } else if (mEditText.getText().toString().contains("教学楼")) {
-                        KEY = 3;
-                    } else if (mEditText.getText().toString().contains("体育馆")) {
-                        KEY = 4;
-                    } else if (mEditText.getText().toString().contains("餐厅")) {
-                        KEY = 1;
-                    } else if (mEditText.getText().toString().contains("操场")) {
-                        KEY = 5;
-                    } else if (mEditText.getText().toString().contains("服务措施")) {
-                        KEY = 6;
-                    } else {
-                        //Toast.makeText(mContext, "此类别目前没有图片", Toast.LENGTH_SHORT).show();
-                        AppMsg appMsg = AppMsg.makeText(mMainActivity, "此类别目前没有图片", new AppMsg.Style(AppMsg.LENGTH_SHORT, R.color.alert), R.layout.appmsg_red);
-                        appMsg.setLayoutGravity(Gravity.TOP);
-                        appMsg.show();
-                        return;
-                    }
+
+
                     mRelativeLayout.setVisibility(View.INVISIBLE);
                     FragmentManager fragmentManager = getFragmentManager();
                     SearchResultsFragment mSearchResultsFragment=new SearchResultsFragment();
