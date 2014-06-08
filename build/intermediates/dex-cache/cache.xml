@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/additionnal-9f60dadecd32bd1aaba2502702ce712e52a14be1.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/additionnal.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/umeng_sdk-4baa53d8083f6806e115c49eed334fb08d2bb021.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/umeng_sdk.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="4a48f6e4825fe302782a78bf5fe3070688baf34f"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/support-v4-13.0.0-9a5bf2f2e3808edcfc1554c97c35823241dd189b.jar"
+        jar="/home/dsnc/Downloads/android-studio/sdk/extras/android/m2repository/com/android/support/support-v4/13.0.0/support-v4-13.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="3fe75433da602500cc71fcc1c46e5550291dd45d"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/classes-f4f2699e93213f014729f0584e5576de1fa5e783.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/build/intermediates/exploded-aar/com.unique.OverHust/AppMsgLibrary/1.0.0-SNAPSHOT/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="1556b441f444c472d2179758c5dc724c3c31d316"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/activation-1556629cdf0447620ae2c3de0edf66de786f8dc6.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/activation.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/aphid-flipview-library-684be4beb1820965823e8fc9c9f4dbd6706a1d92.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/aphid-flipview-library.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="ec8f5b559c0b69aca15eb5bc6f777431da89d7e7"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/SosoMapsdk_raster_v1.0.3-63e7db8bc2422d2ba364ad8bbbe652418217313a.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/SosoMapsdk_raster_v1.0.3.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="80470ab8caad241d2a456e05b4fc27b43107095b"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/mail-e99daf7af01834264da87c2d12b7af512bd4ec9e.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/mail.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="428e267abff0d10802ccde86b915da2c20471160"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/classes-cf3f1d71a3b290da5f85ae852fa1db9d39275c3a.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/build/intermediates/exploded-aar/com.unique.OverHust/SwipeBackLibrary/1.0.0-SNAPSHOT/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="4c4a191ebd0ef8a64477deb763b27df8f0a45e88"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/picasso-2.3.2-0abe9a19bba8c7366b16746fcbf884e6e5e2565a.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/picasso-2.3.2.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27"/>
+
+</pre-dex-items>

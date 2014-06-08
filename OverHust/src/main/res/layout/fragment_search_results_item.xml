@@ -10,13 +10,14 @@
         android:layout_height="37dp"
         android:id="@+id/name"
         android:background="@drawable/fragment_search_results_textview"
-        android:textColor="#ffffff"/>
+        android:textColor="#ffffff" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="167dp"
         android:id="@+id/picture"
-        android:layout_below="@id/name" />
+        android:layout_below="@id/name"
+        android:background="@drawable/fragment_search_relutes_default_bg" />
 
     <LinearLayout
         android:layout_below="@id/picture"

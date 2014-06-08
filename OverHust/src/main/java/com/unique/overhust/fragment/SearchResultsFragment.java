@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,8 @@ public class SearchResultsFragment extends Fragment {
     private View view;
     private ImageView backImageView;
     private ListView mListView;
+
+    private String searchString;
 
 
     public SearchResultsFragment() {
@@ -56,9 +59,14 @@ public class SearchResultsFragment extends Fragment {
             }
         });
 
+        searchString = getArguments().getString("key");
+
         mListView = (ListView) view.findViewById(R.id.fragment_search_results_listview);
         DBManager.open(getActivity());
-        Cursor mCursor = DBManager.getCursor();
+        Cursor mCursor = DBManager.getCursor("name", searchString);
+        if (mCursor.getCount() == 0) {
+            mCursor = DBManager.getCursor("category", searchString);
+        }
         mListView.setAdapter(new ListViewAdapter(getActivity(), mCursor, false));
         DBManager.close();
     }

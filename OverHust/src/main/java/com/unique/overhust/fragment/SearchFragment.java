@@ -56,16 +56,9 @@ public class SearchFragment extends Fragment implements TextWatcher {
 
     private ArrayAdapter<String> mAdapter;
 
-    private final String[] mStrings = SearchCheeses.sCheeseStrings;
+    private final ArrayList<String> mStrings = SearchCheeses.getCheeses();
 
     private InputMethodManager mInputMethodManager;
-
-    private Handler mHandler;
-
-    private Resources mResources;
-    private XmlPullParser parser;
-    private AttributeSet attributes;
-    private String[] urls = null;
 
     private IsNetwork mIsNetwork;
 
@@ -86,7 +79,7 @@ public class SearchFragment extends Fragment implements TextWatcher {
 //        mInputMethodManager.toggleSoftInput(InputMethodManager.RESULT_UNCHANGED_HIDDEN,
 //                InputMethodManager.HIDE_NOT_ALWAYS);
 
-        mAdapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_expandable_list_item_1, mStrings);
+        mAdapter = new ArrayAdapter<String>(mContext, R.layout.fragment_search_listview, mStrings);
         mListView.setAdapter(mAdapter);
         mListView.setTextFilterEnabled(true);
         mListView.setOnItemClickListener(new ListViewListener());
@@ -94,10 +87,10 @@ public class SearchFragment extends Fragment implements TextWatcher {
         mImageView.setOnClickListener(new View.OnClickListener() {
 
             //获取当前系统时间
-            public String dateCurrent(){
-                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd/hh");
-                Date currentdata=new Date(System.currentTimeMillis());
-                String date=simpleDateFormat.format(currentdata);
+            public String dateCurrent() {
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd/hh");
+                Date currentdata = new Date(System.currentTimeMillis());
+                String date = simpleDateFormat.format(currentdata);
                 return date;
             }
 
@@ -109,18 +102,19 @@ public class SearchFragment extends Fragment implements TextWatcher {
                     appMsg.setLayoutGravity(Gravity.TOP);
                     appMsg.show();
                 } else {
-
-
                     mRelativeLayout.setVisibility(View.INVISIBLE);
                     FragmentManager fragmentManager = getFragmentManager();
-                    SearchResultsFragment mSearchResultsFragment=new SearchResultsFragment();
+                    SearchResultsFragment mSearchResultsFragment = new SearchResultsFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("key", mEditText.getText().toString());
+                    mSearchResultsFragment.setArguments(bundle);
                     FragmentTransaction searchTransaction = fragmentManager.beginTransaction();
                     searchTransaction.replace(R.id.content_frame, mSearchResultsFragment);
                     searchTransaction.commit();
 
                     //添加搜索记录
-                    SearchRecord searchRecord=new SearchRecord(mContext);
-                    searchRecord.add(mEditText.getText().toString(),this.dateCurrent());
+                    SearchRecord searchRecord = new SearchRecord(mContext);
+                    searchRecord.add(mEditText.getText().toString(), this.dateCurrent());
                 }
             }
         });
@@ -178,8 +172,8 @@ public class SearchFragment extends Fragment implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable s) {
-        List list= Arrays.asList(mStrings);
-        if(list.contains(mEditText.getText().toString())){
+        List list = Arrays.asList(mStrings);
+        if (list.contains(mEditText.getText().toString())) {
             dismissList();
         }
     }

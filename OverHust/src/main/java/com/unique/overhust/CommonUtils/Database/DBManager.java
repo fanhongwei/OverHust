@@ -26,7 +26,7 @@ public class DBManager {
         db = dbHelper.getWritableDatabase();
     }
 
-    public static void initDatabase(String name, long longitude, long latitude, String category, String picUrl) {
+    public static void initDatabase(String name, double longitude, double latitude, String category, String picUrl) {
         try {
             ContentValues values = new ContentValues();
             values.put("name", name);
@@ -42,6 +42,11 @@ public class DBManager {
 
     public static void insert() {
 
+    }
+
+    public static Cursor getCursor(String key, String values) {
+        mCursor = db.query("图片资源", new String[]{"_id", "name", "longitude", "latitude", "category", "picUrl"}, key + "=?", new String[]{values}, null, null, null);
+        return mCursor;
     }
 
     public static Cursor getCursor() {

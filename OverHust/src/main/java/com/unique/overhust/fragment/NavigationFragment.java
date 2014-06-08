@@ -122,7 +122,7 @@ public class NavigationFragment extends Fragment implements TextWatcher {
                 InputMethodManager.HIDE_NOT_ALWAYS);
 
         mAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1, mStrings);
+                R.layout.fragment_search_listview, mStrings);
         mHandler = new Handler() {
             @Override
             public void handleMessage(Message msg) {

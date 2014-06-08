@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.unique.overhust.MainActivity.ImageDetailsActivity;
+import com.unique.overhust.MainActivity.LoadStreetActivity;
 import com.unique.overhust.R;
 
 /**
@@ -55,7 +56,8 @@ public class ListViewAdapter extends CursorAdapter {
         holder.goThereView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(mContext, LoadStreetActivity.class);
+                
             }
         });
 

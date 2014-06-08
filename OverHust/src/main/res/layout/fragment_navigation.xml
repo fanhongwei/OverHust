@@ -61,7 +61,8 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/end_edittext"
             android:ems="10"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="#ffffff"/>
 
         <ImageView
             android:id="@+id/imageView1"

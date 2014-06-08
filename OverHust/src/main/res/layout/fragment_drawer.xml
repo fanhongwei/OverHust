@@ -14,25 +14,25 @@
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:src="@drawable/map_selector" />
+        android:background="@drawable/map_selector" />
 
     <ImageView
         android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:src="@drawable/search_selector" />
+        android:background="@drawable/search_selector" />
 
     <ImageView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:src="@drawable/navigation" />
+        android:background="@drawable/navigation" />
 
     <ImageView
         android:id="@+id/schoolbus"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:src="@drawable/schoolbus_selector" />
+        android:background="@drawable/schoolbus_selector" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -49,6 +49,6 @@
         android:id="@+id/setting"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:src="@drawable/setting_selector" />
+        android:background="@drawable/setting_selector" />
 
 </LinearLayout>

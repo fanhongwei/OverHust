@@ -23,7 +23,8 @@
             android:layout_centerHorizontal="true"
             android:hint="输入查找类别"
             android:textColorHint="#5462A7"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="#ffffff"/>
 
         <ListView
             android:layout_width="match_parent"
@@ -32,7 +33,7 @@
             android:layout_alignRight="@+id/search_edit"
             android:layout_below="@+id/search_edit"
             android:visibility="gone"
-            android:id="@+id/search_list"></ListView>
+            android:id="@+id/search_list"/>
 
         <ImageView
             android:id="@+id/search_into"

@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.aphidmobile.flip.FlipViewController;
@@ -30,6 +32,7 @@ public class StartActivity extends Activity {
     private final String isFirstInVersion = "isFirstIn_v0.8";
     private final String isCheckInstallVersion = "isCheckInstall_v0.8";
     private ImageView startView;
+    private ImageView bgView;
 
     private OverHustLocation mOverHustLocation;
 
@@ -98,6 +101,8 @@ public class StartActivity extends Activity {
 
     public void noFirstUse() {
         setContentView(R.layout.activity_start);
+
+        loadbgAnim();
         startView = (ImageView) findViewById(R.id.start);
         startView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +112,13 @@ public class StartActivity extends Activity {
                 finish();
             }
         });
+    }
+
+    public void loadbgAnim() {
+        bgView = (ImageView) findViewById(R.id.activity_start);
+
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.start_animation);
+        bgView.setAnimation(animation);
     }
 
     @Override

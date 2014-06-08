@@ -2,74 +2,79 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.unique.overhust"
     android:versionCode="3"
-    android:versionName="v0.8">
+    android:versionName="v0.8" >
 
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
     <application
-        android:name="com.unique.overhust.CommonUtils.ShareContext"
+        android:name=".CommonUtils.ShareContext"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo.Light.NoActionBar">
-
+        android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         <meta-data
-            android:value="52b2b48756240b2566000f04"
-            android:name="UMENG_APPKEY" />
+            android:name="UMENG_APPKEY"
+            android:value="52b2b48756240b2566000f04" />
         <meta-data
-            android:value="Channel ID"
-            android:name="UMENG_CHANNEL" />
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID" />
 
         <activity
-            android:name="com.unique.overhust.MainActivity.StartActivity"
+            android:name=".MainActivity.StartActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.unique.overhust.MainActivity.MainActivity"
+            android:name=".MainActivity.MainActivity"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.unique.overhust.MainActivity.SettingActivity"
+            android:name=".MainActivity.SettingActivity"
             android:label="@string/title_activity_setting"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.unique.overhust.MainActivity.MeActivity"
+            android:name=".MainActivity.MeActivity"
             android:label="@string/title_activity_me"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.unique.overhust.MainActivity.ImageDetailsActivity"
+            android:name=".MainActivity.ImageDetailsActivity"
             android:label="@string/title_activity_image_details"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.unique.overhust.MainActivity.AboutUs"
+            android:name=".MainActivity.AboutUs"
             android:label="@string/title_activity_about_us"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
-            android:name="com.unique.overhust.MainActivity.AboutOverHust"
+            android:name=".MainActivity.AboutOverHust"
             android:label="@string/title_activity_about_over_hust"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
 
         <service
             android:name="com.umeng.common.net.DownloadingService"
-            android:process=":DownloadingService"></service>
+            android:process=":DownloadingService" />
+
         <activity
             android:name="com.umeng.update.UpdateDialogActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <service android:name="com.unique.overhust.DownloadStreetView.DownloadService">
+        <service android:name=".DownloadStreetView.DownloadService" >
             <intent-filter>
-                <action android:name="com.unique.overhust.DownloadService"></action>
+                <action android:name="com.unique.overhust.DownloadService" />
             </intent-filter>
         </service>
 
+        <activity
+            android:name=".MainActivity.LoadStreetActivity"
+            android:label="@string/title_activity_load_street" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

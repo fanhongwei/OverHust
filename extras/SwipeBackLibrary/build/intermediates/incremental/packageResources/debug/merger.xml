@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res" >
+            <file
+                name="ic_launcher"
+                path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="shadow_bottom"
+                path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res/drawable-xhdpi/shadow_bottom.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="shadow_left"
+                path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res/drawable-xhdpi/shadow_left.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="shadow_right"
+                path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res/drawable-xhdpi/shadow_right.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res/values/attrs.xml"
+                qualifiers="" >
+                <declare-styleable name="SwipeBackLayout" >
+                    <attr
+                        name="edge_size"
+                        format="dimension" />
+                    <attr name="edge_flag" >
+                        <enum
+                            name="left"
+                            value="0" />
+                        <enum
+                            name="right"
+                            value="1" />
+                        <enum
+                            name="bottom"
+                            value="2" />
+                        <enum
+                            name="all"
+                            value="3" />
+                    </attr>
+                    <attr
+                        name="shadow_left"
+                        format="reference" />
+                    <attr
+                        name="shadow_right"
+                        format="reference" />
+                    <attr
+                        name="shadow_bottom"
+                        format="reference" />
+                </declare-styleable>
+
+                <attr
+                    name="SwipeBackLayoutStyle"
+                    format="reference" />
+            </file>
+            <file
+                path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res/values/styles.xml"
+                qualifiers="" >
+
+                <style name="SwipeBackLayout" >
+                    <item name="edge_size">
+50dip
+                    </item>
+                    <item name="shadow_left">
+@drawable/shadow_left
+                    </item>
+                    <item name="shadow_right">
+@drawable/shadow_right
+                    </item>
+                    <item name="shadow_bottom">
+@drawable/shadow_bottom
+                    </item>
+                </style>
+            </file>
+            <file
+                name="ic_launcher"
+                path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="swipeback_layout"
+                path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/main/res/layout/swipeback_layout.xml"
+                qualifiers=""
+                type="layout" />
+        </source>
+        <source path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/build/generated/res/rs/debug" />
+        <source path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/build/generated/res/generated/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/home/dsnc/Documents/android-code/OverHust/extras/SwipeBackLibrary/src/debug/res" />
+    </dataSet>
+
+</merger>
