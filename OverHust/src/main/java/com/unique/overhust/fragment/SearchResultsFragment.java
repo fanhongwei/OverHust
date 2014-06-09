@@ -33,6 +33,12 @@ public class SearchResultsFragment extends Fragment {
 
     }
 
+    public static SearchResultsFragment newInstance(String key) {
+        SearchResultsFragment searchResultsFragment = new SearchResultsFragment();
+        searchResultsFragment.searchString = key;
+        return searchResultsFragment;
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,15 +57,9 @@ public class SearchResultsFragment extends Fragment {
         backImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fragmentManager = getFragmentManager();
-                SearchFragment mSearchFragment = new SearchFragment();
-                FragmentTransaction searchTransaction = fragmentManager.beginTransaction();
-                searchTransaction.replace(R.id.content_frame, mSearchFragment);
-                searchTransaction.commit();
+                getActivity().finish();
             }
         });
-
-        searchString = getArguments().getString("key");
 
         mListView = (ListView) view.findViewById(R.id.fragment_search_results_listview);
         DBManager.open(getActivity());

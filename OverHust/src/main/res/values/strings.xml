@@ -23,5 +23,7 @@
     <string name="title_activity_about_over_hust">AboutOverHust</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_load_street">LoadStreetActivity</string>
+    <string name="title_activity_search_results">SearchResultsActivity</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
 
 </resources>

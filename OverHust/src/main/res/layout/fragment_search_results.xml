@@ -6,7 +6,7 @@
 
     <ListView
         android:id="@+id/fragment_search_results_listview"
-        android:layout_width="262dp"
+        android:layout_width="252dp"
         android:layout_height="match_parent"
         android:paddingTop="40dp"
         android:paddingBottom="40dp"
@@ -14,7 +14,6 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="37dp"
         android:listSelector="@android:color/transparent"
-        android:scrollbarStyle="insideInset"
         android:scrollbarSize="3dp"/>
 
     <ImageView

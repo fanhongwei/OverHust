@@ -36,7 +36,8 @@
             android:layout_alignLeft="@+id/editText1"
             android:layout_alignRight="@+id/editText1"
             android:layout_below="@+id/editText1"
-            android:visibility="gone"></ListView>
+            android:visibility="gone"
+            android:listSelector="@android:color/transparent"/>
 
 
         <EditText

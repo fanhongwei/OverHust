@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.media.Image;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.unique.overhust.MainActivity.ImageDetailsActivity;
 import com.unique.overhust.MainActivity.LoadStreetActivity;
+import com.unique.overhust.MainActivity.NavigationActivity;
 import com.unique.overhust.R;
 
 /**
@@ -57,14 +60,26 @@ public class ListViewAdapter extends CursorAdapter {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, LoadStreetActivity.class);
-                
+                Bundle bundle=new Bundle();
+                bundle.putDouble("longitude", mSearchAccount.getLongitude());
+                bundle.putDouble("latitude", mSearchAccount.getLatitude());
+//                intent.putExtra("longitude", mSearchAccount.getLongitude());
+//                intent.putExtra("latitude", mSearchAccount.getLatitude());
+                intent.putExtras(bundle);
+                mContext.startActivity(intent);
+
             }
         });
 
         holder.navigationThereView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(mContext, NavigationActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putDouble("longitude", mSearchAccount.getLongitude());
+                bundle.putDouble("latitude", mSearchAccount.getLatitude());
+                intent.putExtras(bundle);
+                mContext.startActivity(intent);
             }
         });
     }

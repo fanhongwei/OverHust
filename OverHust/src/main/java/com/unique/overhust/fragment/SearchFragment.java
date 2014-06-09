@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,6 +30,7 @@ import com.devspark.appmsg.AppMsg;
 import com.unique.overhust.CommonUtils.IsNetwork;
 import com.unique.overhust.MainActivity.MainActivity;
 import com.unique.overhust.CommonUtils.SearchCheeses;
+import com.unique.overhust.MainActivity.SearchResultsActivity;
 import com.unique.overhust.R;
 import com.unique.overhust.Record.SearchRecord;
 
@@ -102,15 +104,12 @@ public class SearchFragment extends Fragment implements TextWatcher {
                     appMsg.setLayoutGravity(Gravity.TOP);
                     appMsg.show();
                 } else {
-                    mRelativeLayout.setVisibility(View.INVISIBLE);
-                    FragmentManager fragmentManager = getFragmentManager();
-                    SearchResultsFragment mSearchResultsFragment = new SearchResultsFragment();
                     Bundle bundle = new Bundle();
                     bundle.putString("key", mEditText.getText().toString());
-                    mSearchResultsFragment.setArguments(bundle);
-                    FragmentTransaction searchTransaction = fragmentManager.beginTransaction();
-                    searchTransaction.replace(R.id.content_frame, mSearchResultsFragment);
-                    searchTransaction.commit();
+
+                    Intent intent = new Intent(getActivity(), SearchResultsActivity.class);
+                    intent.putExtras(bundle);
+                    getActivity().startActivity(intent);
 
                     //添加搜索记录
                     SearchRecord searchRecord = new SearchRecord(mContext);

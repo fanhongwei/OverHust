@@ -33,7 +33,8 @@
             android:layout_alignRight="@+id/search_edit"
             android:layout_below="@+id/search_edit"
             android:visibility="gone"
-            android:id="@+id/search_list"/>
+            android:id="@+id/search_list"
+            android:listSelector="@android:color/transparent"/>
 
         <ImageView
             android:id="@+id/search_into"

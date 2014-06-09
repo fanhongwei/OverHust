@@ -73,7 +73,16 @@
 
         <activity
             android:name=".MainActivity.LoadStreetActivity"
-            android:label="@string/title_activity_load_street" >
+            android:label="@string/title_activity_load_street"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MainActivity.SearchResultsActivity"
+            android:label="@string/title_activity_search_results"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MainActivity.NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme">
         </activity>
     </application>
 

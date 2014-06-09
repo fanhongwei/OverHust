@@ -249,15 +249,12 @@ public class NavigationFragment extends Fragment implements TextWatcher {
                 mMainActivity.footImageView.setVisibility(View.VISIBLE);
                 dismissDialog();
                 mRelativeLayout.setVisibility(View.GONE);
-                System.out.println("load ok");
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         mStreetView.setVisibility(View.VISIBLE);
-                        System.out.println("load ok!");
                         //mRelativeLayout.setVisibility(View.GONE);
                         final a status = StreetViewShow.getInstance().getStreetStatus();
-                        System.out.println("a" + status.a + "b" + status.b + "c" + status.c + "d" + status.d + "e" + status.e);
                         NavigationPoint b = new NavigationPoint((double) status.c / 1E6, (double) status.d / 1E6);
                         naviInfo.show(b);
                     }
@@ -283,7 +280,6 @@ public class NavigationFragment extends Fragment implements TextWatcher {
                 return overlay;
             }
         };
-        System.out.println("centre" + navigationTools.getPoints().get(0).getiLatitu() + navigationTools.getPoints().get(0).getiLatitu());
         center = new GeoPoint((int) (navigationTools.getPoints().get(0).getiLatitu() * 1E6), (int) (navigationTools.getPoints().get(0).getiLongti() * 1E6));
         //center=new GeoPoint((int)(30.508809 * 1E6),(int)(114.43087 * 1E6));
         StreetViewShow.getInstance().showStreetView(mContext, center, 100,
