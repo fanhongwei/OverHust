@@ -2,18 +2,6 @@
 <pre-dex-items>
 
     <item
-        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/additionnal-9f60dadecd32bd1aaba2502702ce712e52a14be1.jar"
-        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/additionnal.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4"/>
-    <item
-        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/umeng_sdk-4baa53d8083f6806e115c49eed334fb08d2bb021.jar"
-        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/umeng_sdk.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="4a48f6e4825fe302782a78bf5fe3070688baf34f"/>
-    <item
         dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/support-v4-13.0.0-9a5bf2f2e3808edcfc1554c97c35823241dd189b.jar"
         jar="/home/dsnc/Downloads/android-studio/sdk/extras/android/m2repository/com/android/support/support-v4/13.0.0/support-v4-13.0.0.jar"
         jumboMode="false"
@@ -25,18 +13,6 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="1556b441f444c472d2179758c5dc724c3c31d316"/>
-    <item
-        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/activation-1556629cdf0447620ae2c3de0edf66de786f8dc6.jar"
-        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/activation.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383"/>
-    <item
-        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/aphid-flipview-library-684be4beb1820965823e8fc9c9f4dbd6706a1d92.jar"
-        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/aphid-flipview-library.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="ec8f5b559c0b69aca15eb5bc6f777431da89d7e7"/>
     <item
         dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/SosoMapsdk_raster_v1.0.3-63e7db8bc2422d2ba364ad8bbbe652418217313a.jar"
         jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/SosoMapsdk_raster_v1.0.3.jar"
@@ -61,5 +37,29 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/additionnal-9f60dadecd32bd1aaba2502702ce712e52a14be1.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/additionnal.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/umeng_sdk-4baa53d8083f6806e115c49eed334fb08d2bb021.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/umeng_sdk.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="4a48f6e4825fe302782a78bf5fe3070688baf34f"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/activation-1556629cdf0447620ae2c3de0edf66de786f8dc6.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/activation.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383"/>
+    <item
+        dex="/home/dsnc/Documents/android-code/OverHust/OverHust/build/intermediates/pre-dexed/debug/aphid-flipview-library-684be4beb1820965823e8fc9c9f4dbd6706a1d92.jar"
+        jar="/home/dsnc/Documents/android-code/OverHust/OverHust/libs/aphid-flipview-library.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="ec8f5b559c0b69aca15eb5bc6f777431da89d7e7"/>
 
 </pre-dex-items>

@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.11.+'
+        classpath 'com.android.tools.build:gradle:0.12.+'
     }
 }
 apply plugin: 'android'
@@ -45,8 +45,8 @@ tasks.withType(Compile) {
     options.encoding = "UTF-8"
 }
 
-String VERSION_NAME = "v0.8"
-int VERSION_CODE = 3
+String VERSION_NAME = "v1.0"
+int VERSION_CODE = 6
 
 android {
     compileSdkVersion 19
